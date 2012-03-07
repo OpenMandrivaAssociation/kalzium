@@ -1,7 +1,7 @@
 %define eigen_version 2.0.3
 Name: kalzium
 Summary: Shows the periodic system of the elements
-Version: 4.8.0
+Version: 4.8.1
 Release: 1
 Group: Graphical desktop/KDE
 License: GPLv2 LGPLv2 GFDL
