@@ -1,12 +1,12 @@
 %define eigen_version 2.0.3
 Name: kalzium
 Summary: Shows the periodic system of the elements
-Version: 4.8.1
+Version: 4.8.2
 Release: 1
 Group: Graphical desktop/KDE
 License: GPLv2 LGPLv2 GFDL
 URL: http://edu.kde.org/kalzium
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/%name-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/%name-%version.tar.xz
 BuildRequires: kdelibs4-devel >= 2:%version
 BuildRequires: pkgconfig(eigen2) >= %eigen_version
 BuildRequires: pkgconfig(openbabel-2.0) 
