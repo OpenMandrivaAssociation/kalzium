@@ -2,7 +2,7 @@
 
 Name:		kalzium
 Summary:	Shows the periodic system of the elements
-Version:	4.9.4
+Version:	4.10.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2 GFDL
@@ -12,11 +12,13 @@ BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(eigen2) >= %{eigen_version}
 BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	avogadro-devel
-BuildRequires:	ocaml
+BuildRequires:	chemical-mime-data
 BuildRequires:	facile
+BuildRequires:	ocaml
 Requires:	libkdeedu = %{version}
 Requires:	openbabel
 Requires:	avogadro
+Requires:	chemical-mime-data
 Requires:	ocaml
 Conflicts:	cantor < 4.6.90
 Conflicts:	kdeedu4-core < 4.6.90
@@ -38,6 +40,7 @@ information database.
 %{_kde_libdir}/kde4/gasCalculator.so
 %{_kde_libdir}/kde4/nuclearCalculator.so
 %{_kde_applicationsdir}/kalzium.desktop
+%{_kde_applicationsdir}/kalzium_cml.desktop
 %{_kde_services}/plasma-applet-Molmasscalculator.desktop
 %{_kde_datadir}/config.kcfg/kalzium.kcfg
 %{_kde_configdir}/kalzium.knsrc
@@ -145,6 +148,11 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.10.0-1
+- New version 4.10.0
+- Add chemical-mime-data to BuildRequires and Requires
+- Update files
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.4-1
 - New version 4.9.4
 
