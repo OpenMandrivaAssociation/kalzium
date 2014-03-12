@@ -1,23 +1,27 @@
 %define eigen_version 2.0.3
 
-Name:		kalzium
 Summary:	Shows the periodic system of the elements
+Name:		kalzium
 Version:	4.12.3
-Release:	1
+Release:	2
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2 LGPLv2 GFDL
-URL:		http://edu.kde.org/kalzium
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Url:		http://edu.kde.org/kalzium
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
+%ifnarch %{arm}
+BuildRequires:	pkgconfig(avogadro)
+%endif
 BuildRequires:	pkgconfig(eigen2) >= %{eigen_version}
 BuildRequires:	pkgconfig(openbabel-2.0)
-BuildRequires:	avogadro-devel
 BuildRequires:	chemical-mime-data
 BuildRequires:	facile
 BuildRequires:	ocaml
 Requires:	libkdeedu = %{version}
 Requires:	openbabel
+%ifnarch %{arm}
 Requires:	avogadro
+%endif
 Requires:	chemical-mime-data
 Requires:	ocaml
 Conflicts:	cantor < 4.6.90
@@ -123,8 +127,8 @@ Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	pkgconfig(eigen2) >= %{eigen_version}
 Requires:	pkgconfig(openbabel-2.0)
-Requires:	%{libscience} = %{version}-%{release}
-Requires:	%{libcompoundviewer} = %{version}-%{release}
+Requires:	%{libcompoundviewer} = %{EVRD}
+Requires:	%{libscience} = %{EVRD}
 Conflicts:	kdeedu4-devel < 4.6.90
 
 %description devel
@@ -148,6 +152,9 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Wed Mar 12 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.3-2
+- Don't require avogadro for arm because it's not ready yet there
+
 * Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.3-1
 - New version 4.12.3
 
