@@ -2,8 +2,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	4.12.3
-Release:	2
+Version:	4.12.4
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
@@ -152,6 +152,9 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.4-1
+- New version 4.12.4
+
 * Wed Mar 12 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.3-2
 - Don't require avogadro for arm because it's not ready yet there
 
