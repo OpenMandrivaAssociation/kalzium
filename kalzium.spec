@@ -33,28 +33,28 @@ information database.
 %files
 %doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kalzium
-%{_kde_bindir}/kalzium
-%{_kde_appsdir}/kalzium
-%{_kde_iconsdir}/hicolor/*/apps/kalzium.png
-%{_kde_iconsdir}/hicolor/scalable/apps/kalzium.svgz
-%{_kde_libdir}/kde4/plasma_applet_molmassCalculator.so
-%{_kde_libdir}/kde4/concentrationCalculator.so
-%{_kde_libdir}/kde4/gasCalculator.so
-%{_kde_libdir}/kde4/nuclearCalculator.so
 %{_kde_applicationsdir}/kalzium.desktop
 %{_kde_applicationsdir}/kalzium_cml.desktop
-%{_kde_services}/plasma-applet-Molmasscalculator.desktop
-%{_kde_datadir}/config.kcfg/kalzium.kcfg
-%{_kde_configdir}/kalzium.knsrc
+%{_kde_appsdir}/kalzium
 %{_kde_appsdir}/libkdeedu/data/elements.xml
 %{_kde_appsdir}/libkdeedu/data/isotopes.xml
 %{_kde_appsdir}/libkdeedu/data/spectra.xml
 %{_kde_appsdir}/libkdeedu/data/symbols.csv
 %{_kde_appsdir}/libkdeedu/data/symbols2.csv
+%{_kde_bindir}/kalzium
+%{_kde_configdir}/kalzium.knsrc
+%{_kde_datadir}/appdata/kalzium.appdata.xml
+%{_kde_datadir}/config.kcfg/kalzium.kcfg
+%{_kde_iconsdir}/hicolor/*/apps/kalzium.*
+%{_kde_libdir}/kde4/concentrationCalculator.so
+%{_kde_libdir}/kde4/gasCalculator.so
+%{_kde_libdir}/kde4/nuclearCalculator.so
+%{_kde_libdir}/kde4/plasma_applet_molmassCalculator.so
+%{_kde_mandir}/man1/kalzium.1.*
 %{_kde_services}/concentrationCalculator.desktop
 %{_kde_services}/gasCalculator.desktop
 %{_kde_services}/nuclearCalculator.desktop
-%{_kde_mandir}/man1/kalzium.1.*
+%{_kde_services}/plasma-applet-Molmasscalculator.desktop
 
 #-----------------------------------------------------------------------------
 
@@ -153,6 +153,7 @@ Files needed to build applications based on %{name}.
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
 - New version 4.14.1
 - Requires eigen3 now
+- Update files
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
