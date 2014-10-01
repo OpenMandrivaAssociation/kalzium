@@ -10,6 +10,7 @@ BuildRequires:	kdelibs4-devel
 %ifnarch %{arm}
 BuildRequires:	pkgconfig(avogadro)
 %endif
+BuildRequires:	pkgconfig(eigen2)
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	chemical-mime-data
@@ -123,6 +124,7 @@ mainly used by kalzium.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
+Requires:	pkgconfig(eigen2)
 Requires:	pkgconfig(eigen3)
 Requires:	pkgconfig(openbabel-2.0)
 Requires:	%{libcompoundviewer} = %{EVRD}
@@ -152,7 +154,7 @@ Files needed to build applications based on %{name}.
 %changelog
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
 - New version 4.14.1
-- Requires eigen3 now
+- Requires also eigen3 now
 - Update files
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
