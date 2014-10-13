@@ -10,7 +10,6 @@ BuildRequires:	kdelibs4-devel
 %ifnarch %{arm}
 BuildRequires:	pkgconfig(avogadro)
 %endif
-BuildRequires:	pkgconfig(eigen2)
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	chemical-mime-data
@@ -145,6 +144,8 @@ Files needed to build applications based on %{name}.
 %setup -q
 
 %build
+export CXX=g++
+export CC=gcc
 %cmake_kde4
 %make
 
