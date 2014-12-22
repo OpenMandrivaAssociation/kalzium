@@ -1,9 +1,7 @@
-%define eigen_version 2.0.3
-
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	4.13.3
-Release:	1
+Version:	4.14.3
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
@@ -12,7 +10,8 @@ BuildRequires:	kdelibs4-devel
 %ifnarch %{arm}
 BuildRequires:	pkgconfig(avogadro)
 %endif
-BuildRequires:	pkgconfig(eigen2) >= %{eigen_version}
+BuildRequires:	pkgconfig(eigen2)
+BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	chemical-mime-data
 BuildRequires:	facile
@@ -35,28 +34,28 @@ information database.
 %files
 %doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kalzium
-%{_kde_bindir}/kalzium
-%{_kde_appsdir}/kalzium
-%{_kde_iconsdir}/hicolor/*/apps/kalzium.png
-%{_kde_iconsdir}/hicolor/scalable/apps/kalzium.svgz
-%{_kde_libdir}/kde4/plasma_applet_molmassCalculator.so
-%{_kde_libdir}/kde4/concentrationCalculator.so
-%{_kde_libdir}/kde4/gasCalculator.so
-%{_kde_libdir}/kde4/nuclearCalculator.so
 %{_kde_applicationsdir}/kalzium.desktop
 %{_kde_applicationsdir}/kalzium_cml.desktop
-%{_kde_services}/plasma-applet-Molmasscalculator.desktop
-%{_kde_datadir}/config.kcfg/kalzium.kcfg
-%{_kde_configdir}/kalzium.knsrc
+%{_kde_appsdir}/kalzium
 %{_kde_appsdir}/libkdeedu/data/elements.xml
 %{_kde_appsdir}/libkdeedu/data/isotopes.xml
 %{_kde_appsdir}/libkdeedu/data/spectra.xml
 %{_kde_appsdir}/libkdeedu/data/symbols.csv
 %{_kde_appsdir}/libkdeedu/data/symbols2.csv
+%{_kde_bindir}/kalzium
+%{_kde_configdir}/kalzium.knsrc
+%{_kde_datadir}/appdata/kalzium.appdata.xml
+%{_kde_datadir}/config.kcfg/kalzium.kcfg
+%{_kde_iconsdir}/hicolor/*/apps/kalzium.*
+%{_kde_libdir}/kde4/concentrationCalculator.so
+%{_kde_libdir}/kde4/gasCalculator.so
+%{_kde_libdir}/kde4/nuclearCalculator.so
+%{_kde_libdir}/kde4/plasma_applet_molmassCalculator.so
+%{_kde_mandir}/man1/kalzium.1.*
 %{_kde_services}/concentrationCalculator.desktop
 %{_kde_services}/gasCalculator.desktop
 %{_kde_services}/nuclearCalculator.desktop
-%{_kde_mandir}/man1/kalzium.1.*
+%{_kde_services}/plasma-applet-Molmasscalculator.desktop
 
 #-----------------------------------------------------------------------------
 
@@ -125,7 +124,8 @@ mainly used by kalzium.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	pkgconfig(eigen2) >= %{eigen_version}
+Requires:	pkgconfig(eigen2)
+Requires:	pkgconfig(eigen3)
 Requires:	pkgconfig(openbabel-2.0)
 Requires:	%{libcompoundviewer} = %{EVRD}
 Requires:	%{libscience} = %{EVRD}
@@ -152,6 +152,17 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.3-1
+- New version 4.14.3
+
+* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.2-1
+- New version 4.14.2
+
+* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
+- New version 4.14.1
+- Requires also eigen3 now
+- Update files
+
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
 
