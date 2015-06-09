@@ -15,7 +15,7 @@ BuildRequires:	pkgconfig(avogadro)
 BuildRequires:	pkgconfig(eigen2)
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
-BuildRequires:	chemical-mime-data
+BuildRequires:	pkgconfig(chemical-mime-data)
 BuildRequires:	facile
 BuildRequires:	ocaml
 Requires:	openbabel
@@ -78,7 +78,7 @@ kalzium engine applet
 %package -n plasma-applet-didyouknow
 Summary:	plasma didyouknow Applet
 Group:		Graphical desktop/KDE
-Requires:	kdeb-runtime
+Requires:	kde-runtime
 Provides:	plasma-applet
 
 %description -n plasma-applet-didyouknow
