@@ -2,8 +2,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	15.08.0
-Release:	2
+Version:	15.08.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
@@ -12,7 +12,6 @@ BuildRequires:	kdelibs-devel
 %ifnarch %{arm}
 BuildRequires:	pkgconfig(avogadro)
 %endif
-BuildRequires:	pkgconfig(eigen2)
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	pkgconfig(chemical-mime-data)
@@ -146,7 +145,7 @@ Files needed to build applications based on %{name}.
 %setup -q
 
 %build
-%cmake_kde4
+%cmake_kde4 -DCMAKE_MINIMUM_REQUIRED_VERSION=2.6
 %make
 
 %install
