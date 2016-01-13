@@ -2,8 +2,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	15.12.0
-Release:	2
+Version:	15.12.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
