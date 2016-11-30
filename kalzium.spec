@@ -34,8 +34,8 @@ information database.
 %files
 %doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kalzium
-%{_kde_applicationsdir}/kalzium.desktop
-%{_kde_applicationsdir}/kalzium_cml.desktop
+%{_kde_applicationsdir}/org.kde.kalzium.desktop
+%{_kde_applicationsdir}/org.kde.kalzium_cml.desktop
 %{_kde_appsdir}/kalzium
 %{_kde_appsdir}/libkdeedu/data/elements.xml
 %{_kde_appsdir}/libkdeedu/data/isotopes.xml
@@ -44,7 +44,7 @@ information database.
 %{_kde_appsdir}/libkdeedu/data/symbols2.csv
 %{_kde_bindir}/kalzium
 %{_kde_configdir}/kalzium.knsrc
-%{_kde_datadir}/appdata/kalzium.appdata.xml
+%{_kde_datadir}/metainfo/org.kde.kalzium.appdata.xml
 %{_kde_datadir}/config.kcfg/kalzium.kcfg
 %{_kde_iconsdir}/hicolor/*/apps/kalzium.*
 %{_kde_libdir}/kde4/concentrationCalculator.so
