@@ -2,14 +2,12 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	16.12.2
+Version:	17.03.80
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		kalzium-16.12.2-compile.patch
-BuildRequires:	kdelibs-devel
 %ifnarch %{arm}
 BuildRequires:	pkgconfig(avogadro)
 %endif
@@ -18,6 +16,26 @@ BuildRequires:	pkgconfig(openbabel-2.0)
 BuildRequires:	pkgconfig(chemical-mime-data)
 BuildRequires:	facile
 BuildRequires:	ocaml
+BuildRequires:	cmake(KF5Completion)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5ItemViews)
+BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5KHtml)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5Plotting)
+BuildRequires:	cmake(KF5TextWidgets)
+BuildRequires:	cmake(KF5UnitConversion)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Script)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Xml)
 Requires:	openbabel
 %ifnarch %{arm}
 Requires:	avogadro
