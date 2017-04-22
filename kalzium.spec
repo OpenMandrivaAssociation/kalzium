@@ -2,7 +2,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -52,9 +52,8 @@ Kalzium is an application which will show you some information about the
 periodic system of the elements. Therefore you could use it as an
 information database.
 
-%files
+%files -f all.lang
 %doc COPYING COPYING.LIB COPYING.DOC
-%doc %{_kde_docdir}/HTML/en/kalzium
 %{_sysconfdir}/xdg/kalzium.knsrc
 %{_datadir}/applications/org.kde.kalzium.desktop
 %{_datadir}/applications/org.kde.kalzium_cml.desktop
@@ -63,9 +62,38 @@ information database.
 %{_datadir}/config.kcfg/kalzium.kcfg
 %{_datadir}/icons/*/*/*/*.*
 %{_mandir}/man1/kalzium.1.*
+%lang(ca) %{_mandir}/ca/man1/kalzium.1*
+%lang(da) %{_mandir}/da/man1/kalzium.1*
+%lang(de) %{_mandir}/de/man1/kalzium.1*
+%lang(es) %{_mandir}/es/man1/kalzium.1*
+%lang(et) %{_mandir}/et/man1/kalzium.1*
+%lang(fr) %{_mandir}/fr/man1/kalzium.1*
+%lang(gl) %{_mandir}/gl/man1/kalzium.1*
+%lang(it) %{_mandir}/it/man1/kalzium.1*
+%lang(nl) %{_mandir}/nl/man1/kalzium.1*
+%lang(pl) %{_mandir}/pl/man1/kalzium.1*
+%lang(pt) %{_mandir}/pt/man1/kalzium.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/kalzium.1*
+%lang(ru) %{_mandir}/ru/man1/kalzium.1*
+%lang(sv) %{_mandir}/sv/man1/kalzium.1*
+%lang(uk) %{_mandir}/uk/man1/kalzium.1*
 %{_datadir}/kalzium
 %{_datadir}/kxmlgui5/kalzium
 %{_datadir}/libkdeedu/data/*
+%doc %{_kde_docdir}/HTML/en/kalzium
+%lang(ca) %doc %{_kde_docdir}/HTML/ca/kalzium
+%lang(de) %doc %{_kde_docdir}/HTML/de/kalzium
+%lang(es) %doc %{_kde_docdir}/HTML/es/kalzium
+%lang(fr) %doc %{_kde_docdir}/HTML/fr/kalzium
+%lang(gl) %doc %{_kde_docdir}/HTML/gl/kalzium
+%lang(it) %doc %{_kde_docdir}/HTML/it/kalzium
+%lang(nl) %doc %{_kde_docdir}/HTML/nl/kalzium
+%lang(pl) %doc %{_kde_docdir}/HTML/pl/kalzium
+%lang(pt) %doc %{_kde_docdir}/HTML/pt/kalzium
+%lang(pt_BR) %doc %{_kde_docdir}/HTML/pt_BR/kalzium
+%lang(ru) %doc %{_kde_docdir}/HTML/ru/kalzium
+%lang(sv) %doc %{_kde_docdir}/HTML/sv/kalzium
+%lang(uk) %doc %{_kde_docdir}/HTML/uk/kalzium
 
 #----------------------------------------------------------------------------
 
@@ -113,3 +141,11 @@ Files needed to build applications based on %{name}.
 
 %install
 %ninja_install -C build
+%find_lang %{name}
+%find_lang plasma_applet_Molmasscalculator
+%find_lang plasma_applet_concentrationCalculator
+%find_lang plasma_applet_gasCalculator
+%find_lang plasma_applet_kalzium
+%find_lang plasma_applet_nuclearCalculator
+%find_lang plasma_engine_kalzium
+cat *.lang >all.lang
