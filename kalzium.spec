@@ -83,20 +83,20 @@ information database.
 %{_datadir}/kalzium
 %{_datadir}/kxmlgui5/kalzium
 %{_datadir}/libkdeedu/data/*
-%doc %{_kde_docdir}/HTML/en/kalzium
-%lang(ca) %doc %{_kde_docdir}/HTML/ca/kalzium
-%lang(de) %doc %{_kde_docdir}/HTML/de/kalzium
-%lang(es) %doc %{_kde_docdir}/HTML/es/kalzium
-%lang(fr) %doc %{_kde_docdir}/HTML/fr/kalzium
-%lang(gl) %doc %{_kde_docdir}/HTML/gl/kalzium
-%lang(it) %doc %{_kde_docdir}/HTML/it/kalzium
-%lang(nl) %doc %{_kde_docdir}/HTML/nl/kalzium
-%lang(pl) %doc %{_kde_docdir}/HTML/pl/kalzium
-%lang(pt) %doc %{_kde_docdir}/HTML/pt/kalzium
-%lang(pt_BR) %doc %{_kde_docdir}/HTML/pt_BR/kalzium
-%lang(ru) %doc %{_kde_docdir}/HTML/ru/kalzium
-%lang(sv) %doc %{_kde_docdir}/HTML/sv/kalzium
-%lang(uk) %doc %{_kde_docdir}/HTML/uk/kalzium
+%doc %{_docdir}/HTML/en/kalzium
+%lang(ca) %doc %{_docdir}/HTML/ca/kalzium
+%lang(de) %doc %{_docdir}/HTML/de/kalzium
+%lang(es) %doc %{_docdir}/HTML/es/kalzium
+%lang(fr) %doc %{_docdir}/HTML/fr/kalzium
+%lang(gl) %doc %{_docdir}/HTML/gl/kalzium
+%lang(it) %doc %{_docdir}/HTML/it/kalzium
+%lang(nl) %doc %{_docdir}/HTML/nl/kalzium
+%lang(pl) %doc %{_docdir}/HTML/pl/kalzium
+%lang(pt) %doc %{_docdir}/HTML/pt/kalzium
+%lang(pt_BR) %doc %{_docdir}/HTML/pt_BR/kalzium
+%lang(ru) %doc %{_docdir}/HTML/ru/kalzium
+%lang(sv) %doc %{_docdir}/HTML/sv/kalzium
+%lang(uk) %doc %{_docdir}/HTML/uk/kalzium
 
 #----------------------------------------------------------------------------
 
@@ -137,10 +137,10 @@ Files needed to build applications based on %{name}.
 %prep
 %setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-%ninja
+%ninja -C build
 
 %install
 %ninja_install -C build
