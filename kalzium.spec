@@ -36,6 +36,8 @@ BuildRequires:	cmake(Qt5Script)
 BuildRequires:	cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
+BuildRequires:	cmake(Qt5Quick)
+
 Requires:	openbabel
 %ifnarch %{arm}
 Requires:	avogadro
