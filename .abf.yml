@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kalzium-17.12.1.tar.xz: f9171e2f85a507fe3c06e08026b50198f2c58f6c
+sources:
+  kalzium-17.12.2.tar.xz: 54413fb903eeaca56950024f25a2f1e4b81f8cc8
