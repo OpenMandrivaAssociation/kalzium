@@ -3,13 +3,13 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	 17.12.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 %ifnarch %{arm}
-BuildRequires:	pkgconfig(avogadro)
+BuildRequires:	cmake(AvogadroLibs)
 %endif
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-2.0)
@@ -40,9 +40,6 @@ BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5Quick)
 
 Requires:	openbabel
-%ifnarch %{arm}
-Requires:	avogadro
-%endif
 Requires:	chemical-mime-data
 Requires:	ocaml
 Conflicts:	cantor < 4.6.90
@@ -114,6 +111,24 @@ mainly used by kalzium.
 %files -n %{libscience}
 %{_libdir}/libscience.so.%{science_major}*
 
+#----------------------------------------------------------------------------
+%ifnarch %{arm}
+
+%define compoundviewer_major 5
+%define libcompoundviewer %mklibname compoundviewer %{compoundviewer_major}
+
+%package -n %{libcompoundviewer}
+Summary:        Runtime library for KDE Education Application
+Group:          System/Libraries
+
+%description -n %{libcompoundviewer}
+libcompoundviewer is a library that provides classes for chemical data.This library is
+mainly used by kalzium.
+
+%files -n %{libcompoundviewer}
+%{_libdir}/libcompoundviewer.so.%{compoundviewer_major}*
+
+%endif
 #-----------------------------------------------------------------------------
 
 %package devel
@@ -123,6 +138,9 @@ Requires:	pkgconfig(eigen2)
 Requires:	pkgconfig(eigen3)
 Requires:	pkgconfig(openbabel-2.0)
 Requires:	%{libscience} = %{EVRD}
+%ifnarch %{arm}
+Requires:	%{libcompoundviewer} = %{EVRD}
+%endif
 Conflicts:	kdeedu4-devel < 4.6.90
 
 %description devel
@@ -131,6 +149,7 @@ Files needed to build applications based on %{name}.
 %files devel
 %{_includedir}/libkdeedu
 %{_libdir}/libscience.so
+%{_libdir}/libcompoundviewer.so
 
 #----------------------------------------------------------------------
 
