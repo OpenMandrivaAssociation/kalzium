@@ -122,8 +122,8 @@ Summary:        Runtime library for KDE Education Application
 Group:          System/Libraries
 
 %description -n %{libcompoundviewer}
-libcompoundviewer is a library that provides classes for chemical data.This library is
-mainly used by kalzium.
+libcompoundviewer is a library that provides classes for chemical data. This 
+library is mainly used by kalzium.
 
 %files -n %{libcompoundviewer}
 %{_libdir}/libcompoundviewer.so.%{compoundviewer_major}*
