@@ -1,5 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
+%define __noautoreq '^devel\\(libAvogadro.*$'
+
+
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	 17.12.2
