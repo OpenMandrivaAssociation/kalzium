@@ -5,8 +5,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	 17.12.2
-Release:	2
+Version:	18.04.3
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
@@ -137,7 +137,6 @@ library is mainly used by kalzium.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	pkgconfig(eigen2)
 Requires:	pkgconfig(eigen3)
 Requires:	pkgconfig(openbabel-2.0)
 Requires:	%{libscience} = %{EVRD}
