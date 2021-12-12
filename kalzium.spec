@@ -5,7 +5,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -56,7 +56,6 @@ periodic system of the elements. Therefore you could use it as an
 information database.
 
 %files -f all.lang
-%doc COPYING COPYING.LIB COPYING.DOC
 %{_datadir}/knsrcfiles/kalzium.knsrc
 %{_datadir}/applications/org.kde.kalzium.desktop
 %{_datadir}/applications/org.kde.kalzium_cml.desktop
