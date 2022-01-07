@@ -41,6 +41,7 @@ BuildRequires:	cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
 Requires:	chemical-mime-data
