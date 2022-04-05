@@ -5,7 +5,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	21.12.2
+Version:	22.03.80
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -68,6 +68,7 @@ information database.
 %{_datadir}/kalzium
 %{_datadir}/kxmlgui5/kalzium
 %{_datadir}/libkdeedu/data/*
+%{_datadir}/qlogging-categories5/kalzium.categories
 
 #----------------------------------------------------------------------------
 
@@ -137,10 +138,4 @@ Files needed to build applications based on %{name}.
 %install
 %ninja_install -C build
 %find_lang %{name} --with-man --with-html
-%find_lang plasma_applet_Molmasscalculator
-%find_lang plasma_applet_concentrationCalculator
-%find_lang plasma_applet_gasCalculator
-%find_lang plasma_applet_kalzium
-%find_lang plasma_applet_nuclearCalculator
-%find_lang plasma_engine_kalzium
 cat *.lang >all.lang
