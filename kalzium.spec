@@ -5,7 +5,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	22.04.2
+Version:	22.04.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
