@@ -5,12 +5,13 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	22.12.2
+Version:	22.12.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		kalzium-ocaml-5.0.patch
 %ifnarch %{arm}
 BuildRequires:	cmake(AvogadroLibs)
 %endif
