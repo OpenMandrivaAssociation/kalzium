@@ -1,7 +1,7 @@
-diff -up kalzium-22.12.3/src/solver/modwrap.c.omv~ kalzium-22.12.3/src/solver/modwrap.c
---- kalzium-22.12.3/src/solver/modwrap.c.omv~	2023-03-02 17:23:23.533108818 +0100
-+++ kalzium-22.12.3/src/solver/modwrap.c	2023-03-02 17:24:09.609495327 +0100
-@@ -13,11 +13,11 @@
+diff -up kalzium-23.08.0/src/solver/modwrap.c.1~ kalzium-23.08.0/src/solver/modwrap.c
+--- kalzium-23.08.0/src/solver/modwrap.c.1~	2023-08-23 18:23:14.632780602 +0200
++++ kalzium-23.08.0/src/solver/modwrap.c	2023-08-23 18:25:48.111060709 +0200
+@@ -13,7 +13,7 @@
  
  char *solve_equation(const char *eq)
  {
@@ -10,9 +10,3 @@ diff -up kalzium-22.12.3/src/solver/modwrap.c.omv~ kalzium-22.12.3/src/solver/mo
      if (solve_equation_closure == NULL) {
          solve_equation_closure = caml_named_value("solve_equation");
      }
- 
--    value v = copy_string(eq);
--    return strdup(String_val(callback(*solve_equation_closure, v)));
-+    value v = caml_copy_string(eq);
-+    return strdup(String_val(caml_callback(*solve_equation_closure, v)));
- }
