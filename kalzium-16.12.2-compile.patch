@@ -1,0 +1,11 @@
+--- kalzium-16.12.2/src/calculator/titrationCalculator.cpp.omv~	2017-02-10 18:53:19.391696102 +0100
++++ kalzium-16.12.2/src/calculator/titrationCalculator.cpp	2017-02-10 18:53:34.300859120 +0100
+@@ -41,7 +41,7 @@
+ 
+ using namespace std;
+ 
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) || defined(__clang__)
+ #define and &&
+ #define or ||
+ #endif
