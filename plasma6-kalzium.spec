@@ -41,6 +41,7 @@ BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
+BuildRequires:	cmake(Qt6StateMachine)
 BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
