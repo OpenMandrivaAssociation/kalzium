@@ -1,3 +1,6 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 %define __noautoreq '^devel\\(libAvogadro.*$'
@@ -5,12 +8,16 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		plasma6-kalzium
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/education/kalzium/-/archive/%{gitbranch}/kalzium-%{gitbranchd}.tar.bz2#/kalzium-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kalzium-%{version}.tar.xz
+%endif
 Patch0:		kalzium-ocaml-5.0.patch
 %ifnarch %{arm}
 BuildRequires:	cmake(AvogadroLibs)
@@ -106,7 +113,7 @@ Files needed to build applications based on %{name}.
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kalzium-%{version}
+%autosetup -p1 -n kalzium-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
