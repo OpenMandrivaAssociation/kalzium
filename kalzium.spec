@@ -110,7 +110,7 @@ library is mainly used by kalzium.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	pkgconfig(eigen3)
-Requires:	pkgconfig(openbabel-2.0)
+Requires:	pkgconfig(openbabel-3)
 Requires:	%{libscience} = %{EVRD}
 %ifnarch %{arm}
 Requires:	%{libcompoundviewer} = %{EVRD}
