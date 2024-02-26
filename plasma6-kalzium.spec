@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		plasma6-kalzium
 Version:	24.01.96
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kalzium
@@ -23,7 +23,7 @@ Patch0:		kalzium-ocaml-5.0.patch
 BuildRequires:	cmake(AvogadroLibs)
 %endif
 BuildRequires:	pkgconfig(eigen3)
-BuildRequires:	pkgconfig(openbabel-2.0)
+BuildRequires:	pkgconfig(openbabel-3)
 BuildRequires:	pkgconfig(chemical-mime-data)
 BuildRequires:	facile
 BuildRequires:	ocaml
