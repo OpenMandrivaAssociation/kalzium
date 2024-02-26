@@ -16,7 +16,7 @@ Patch0:		kalzium-ocaml-5.0.patch
 BuildRequires:	cmake(AvogadroLibs)
 %endif
 BuildRequires:	pkgconfig(eigen3)
-BuildRequires:	pkgconfig(openbabel-2.0)
+BuildRequires:	pkgconfig(openbabel-3)
 BuildRequires:	pkgconfig(chemical-mime-data)
 BuildRequires:	facile
 BuildRequires:	ocaml
