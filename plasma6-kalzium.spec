@@ -8,7 +8,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		plasma6-kalzium
-Version:	24.08.1
+Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -19,6 +19,7 @@ Source0:	https://invent.kde.org/education/kalzium/-/archive/%{gitbranch}/kalzium
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kalzium-%{version}.tar.xz
 %endif
 Patch0:		kalzium-ocaml-5.0.patch
+Patch1:		kalzium-24.08.2-compile.patch
 %ifnarch %{arm}
 BuildRequires:	cmake(AvogadroLibs)
 %endif

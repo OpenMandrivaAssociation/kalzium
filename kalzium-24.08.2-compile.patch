@@ -1,0 +1,12 @@
+diff -up kalzium-24.08.2/src/calculator/nuclearCalculator.cpp.omv~ kalzium-24.08.2/src/calculator/nuclearCalculator.cpp
+--- kalzium-24.08.2/src/calculator/nuclearCalculator.cpp.omv~	2024-10-12 05:02:04.705294075 +0200
++++ kalzium-24.08.2/src/calculator/nuclearCalculator.cpp	2024-10-12 05:02:37.655644442 +0200
+@@ -176,7 +176,7 @@ void nuclearCalculator::isotopeChanged(i
+     m_mass = list.at(index)->mass();
+ 
+     // A string in isotope for searching the right unit
+-    int halfLifeUnit = (list.at(index)->halflifeUnit().operator==("y")) ? KUnitConversion::Year : KUnitConversion::Second;
++    int halfLifeUnit = (list.at(index)->halflifeUnit()==QLatin1String("y")) ? KUnitConversion::Year : KUnitConversion::Second;
+ 
+     QString tempStr;
+     tempStr.setNum(m_mass);
