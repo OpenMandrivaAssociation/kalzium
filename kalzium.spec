@@ -9,7 +9,7 @@ Version:	24.02.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://edu.kde.org/kalzium
+Url:		https://edu.kde.org/kalzium
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Patch0:		kalzium-ocaml-5.0.patch
 %ifnarch %{arm}
