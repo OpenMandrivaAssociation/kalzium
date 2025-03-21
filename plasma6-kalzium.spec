@@ -50,6 +50,8 @@ BuildRequires:	cmake(Qt6Xml)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6StateMachine)
+BuildRequires:	cmake(Qt6Scxml)
+BuildRequires:	cmake(Qt6ScxmlGlobal)
 BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
