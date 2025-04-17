@@ -8,8 +8,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		plasma6-kalzium
-Version:	24.12.3
-Release:	%{?git:0.%{git}.}2
+Version:	25.04.0
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -51,7 +51,6 @@ BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6StateMachine)
 BuildRequires:	cmake(Qt6Scxml)
-BuildRequires:	cmake(Qt6ScxmlGlobal)
 BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
