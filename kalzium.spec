@@ -7,7 +7,7 @@
 
 
 Summary:	Shows the periodic system of the elements
-Name:		plasma6-kalzium
+Name:		kalzium
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
