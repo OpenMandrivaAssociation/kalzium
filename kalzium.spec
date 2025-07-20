@@ -8,7 +8,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -61,6 +61,12 @@ Conflicts:	kdeedu4-core < 4.6.90
 Obsoletes:	plasma-engine-kalzium < %{EVRD}
 Obsoletes:	plasma-applet-didyouknow < %{EVRD}
 
+%rename plasma6-kalzium
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+BuildOption:	-DQT_MAJOR_VERSION=6
+
 %description
 Kalzium is an application which will show you some information about the
 periodic system of the elements. Therefore you could use it as an
@@ -110,19 +116,3 @@ Files needed to build applications based on %{name}.
 %files devel
 %{_includedir}/libkdeedu
 %{_libdir}/libscience.so
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kalzium-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kalzium --with-man --with-html
