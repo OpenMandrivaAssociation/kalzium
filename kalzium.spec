@@ -109,6 +109,7 @@ Requires:	pkgconfig(eigen3)
 Requires:	pkgconfig(openbabel-3)
 Requires:	%{libscience} = %{EVRD}
 Conflicts:	kdeedu4-devel < 4.6.90
+%rename plasma6-kalzium-devel
 
 %description devel
 Files needed to build applications based on %{name}.
