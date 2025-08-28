@@ -8,7 +8,7 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	25.04.3
+Version:	25.08.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -73,6 +73,9 @@ periodic system of the elements. Therefore you could use it as an
 information database.
 
 %files -f kalzium.lang
+# No headers for this library -- so splitting it and having -devel
+# doesn't make sense
+%{_libdir}/libcompoundviewer.so*
 %{_datadir}/applications/org.kde.kalzium.desktop
 %{_datadir}/applications/org.kde.kalzium_cml.desktop
 %{_bindir}/kalzium
@@ -81,6 +84,7 @@ information database.
 %{_datadir}/icons/*/*/*/*.*
 %{_mandir}/man1/kalzium.1.*
 %{_datadir}/kalzium
+%{_datadir}/knsrcfiles/kalzium.knsrc
 %{_datadir}/libkdeedu/data/*
 %{_datadir}/qlogging-categories6/kalzium.categories
 
