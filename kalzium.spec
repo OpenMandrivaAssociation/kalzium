@@ -53,6 +53,7 @@ BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6StateMachine)
 BuildRequires:	cmake(Qt6Scxml)
+BuildRequires:	cmake(JKQTPlotter6)
 BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
