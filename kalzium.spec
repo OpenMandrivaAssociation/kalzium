@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	7
+Release:	8
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -79,10 +79,23 @@ Kalzium is an application which will show you some information about the
 periodic system of the elements. Therefore you could use it as an
 information database.
 
-%files -f kalzium.lang
+
+%install -a
+# Optional features may be absent when Avogadro/JKQT are disabled
+: > kalzium-optional.files
+for f in %{buildroot}%{_libdir}/libcompoundviewer.so*; do
+	[ -e "$f" ] && echo "${f#%{buildroot}}" >> kalzium-optional.files
+done
+if [ -e %{buildroot}%{_datadir}/knsrcfiles/kalzium.knsrc ]; then
+	echo "%{_datadir}/knsrcfiles/kalzium.knsrc" >> kalzium-optional.files
+fi
+if [ -e %{buildroot}%{_datadir}/libkdeedu/data ]; then
+	echo "%{_datadir}/libkdeedu/data/*" >> kalzium-optional.files
+fi
+
+%files -f kalzium.lang -f kalzium-optional.files
 # No headers for this library -- so splitting it and having -devel
 # doesn't make sense
-%{_libdir}/libcompoundviewer.so*
 %{_datadir}/applications/org.kde.kalzium.desktop
 %{_datadir}/applications/org.kde.kalzium_cml.desktop
 %{_bindir}/kalzium
@@ -91,8 +104,6 @@ information database.
 %{_datadir}/icons/*/*/*/*.*
 %{_mandir}/man1/kalzium.1.*
 %{_datadir}/kalzium
-%{_datadir}/knsrcfiles/kalzium.knsrc
-%{_datadir}/libkdeedu/data/*
 %{_datadir}/qlogging-categories6/kalzium.categories
 
 #----------------------------------------------------------------------------
