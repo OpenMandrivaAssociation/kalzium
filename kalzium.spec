@@ -9,12 +9,12 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
-%if 0%{?git:1}
 Source1:	kalzium.rpmlintrc
+%if 0%{?git:1}
 Source0:	https://invent.kde.org/education/kalzium/-/archive/%{gitbranch}/kalzium-%{gitbranchd}.tar.bz2#/kalzium-%{git}.tar.bz2
 %else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kalzium-%{version}.tar.xz
