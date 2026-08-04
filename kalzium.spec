@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	%{?git:0.%{git}.}1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(openbabel-3)
 BuildRequires:	pkgconfig(chemical-mime-data)
 BuildRequires:	facile
 BuildRequires:	ocaml
+BuildRequires:	ocaml-compiler
 BuildRequires:	cmake(KF6Completion)
 BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6ConfigWidgets)
