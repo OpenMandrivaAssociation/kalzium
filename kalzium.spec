@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -50,6 +50,7 @@ BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
 BuildRequires:	cmake(Qt6OpenGL)
+BuildRequires:	cmake(Qt6OpenGLWidgets)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6StateMachine)
