@@ -1,0 +1,2 @@
+addFilter("lib-package-without-%mklibname")
+addFilter("invalid-license")
