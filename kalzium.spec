@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -55,7 +55,7 @@ BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6StateMachine)
 BuildRequires:	cmake(Qt6Scxml)
-BuildRequires:	cmake(JKQTPlotter6)
+# BuildRequires:	cmake(JKQTPlotter6)  # not in cooker currently
 BuildRequires:	pkgconfig(glu)
 
 Requires:	openbabel
@@ -71,6 +71,7 @@ Obsoletes:	plasma-applet-didyouknow < %{EVRD}
 BuildSystem:	cmake
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 BuildOption:	-DQT_MAJOR_VERSION=6
+BuildOption:	-DCMAKE_DISABLE_FIND_PACKAGE_JKQTPlotter6=ON
 
 %description
 Kalzium is an application which will show you some information about the
