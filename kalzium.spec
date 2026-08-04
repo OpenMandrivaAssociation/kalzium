@@ -9,7 +9,7 @@
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
 Version:	26.04.3
-Release:	5
+Release:	6
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -20,9 +20,8 @@ Source0:	https://invent.kde.org/education/kalzium/-/archive/%{gitbranch}/kalzium
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kalzium-%{version}.tar.xz
 %endif
 Patch0:		kalzium-ocaml-5.0.patch
-%ifnarch %{arm}
-BuildRequires:	cmake(AvogadroLibs)
-%endif
+# AvogadroLibs needs JKQTPlotter6 which is not in cooker currently
+# BuildRequires:	cmake(AvogadroLibs)
 BuildRequires:	pkgconfig(eigen3)
 BuildRequires:	pkgconfig(openbabel-3)
 BuildRequires:	pkgconfig(chemical-mime-data)
@@ -72,6 +71,7 @@ BuildSystem:	cmake
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 BuildOption:	-DQT_MAJOR_VERSION=6
 BuildOption:	-DCMAKE_DISABLE_FIND_PACKAGE_JKQTPlotter6=ON
+BuildOption:	-DCMAKE_DISABLE_FIND_PACKAGE_AvogadroLibs=ON
 
 %description
 Kalzium is an application which will show you some information about the
