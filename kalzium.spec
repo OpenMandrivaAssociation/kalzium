@@ -8,8 +8,8 @@
 
 Summary:	Shows the periodic system of the elements
 Name:		kalzium
-Version:	26.04.3
-Release:	8
+Version:	26.08.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://edu.kde.org/kalzium
@@ -69,6 +69,7 @@ Obsoletes:	plasma-applet-didyouknow < %{EVRD}
 %rename plasma6-kalzium
 
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 BuildOption:	-DQT_MAJOR_VERSION=6
 BuildOption:	-DCMAKE_DISABLE_FIND_PACKAGE_JKQTPlotter6=ON
