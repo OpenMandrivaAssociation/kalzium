@@ -58,7 +58,6 @@ BuildRequires:	cmake(Qt6Scxml)
 # BuildRequires:	cmake(JKQTPlotter6)  # not in cooker currently
 BuildRequires:	pkgconfig(glu)
 
-Requires:	openbabel
 Requires:	chemical-mime-data
 Requires:	ocaml
 Conflicts:	cantor < 4.6.90
